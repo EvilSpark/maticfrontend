@@ -1,0 +1,313 @@
+@import '../common/styles/main';
+
+.marketplace-container {
+	display: flex;
+	min-height: calc(100% - var(--footer-height));
+	padding-top: 30px;
+	padding-bottom: 30px;
+	background: $gradient;
+	flex-direction: column;
+
+	.Dropdown-menu {
+		border-radius: 1rem !important;
+		background-color: #272329 !important;
+		border: 1px solid #000 !important;
+		color: #ffffff !important;
+		width: 150px !important;
+		right: 0.05rem !important;
+		padding: 1px !important;
+		margin: 1px !important;
+		min-width: 12rem !important;
+	}
+
+	.Dropdown-option {
+		color: #ffffff !important;
+	}
+
+	.is-selected {
+		color: #ffffff !important;
+		background-color: #272329 !important;
+	}
+
+	.is-selected:hover {
+		color: #ffffff !important;
+	}
+
+	.Dropdown-option:hover {
+		background-color: #666 !important;
+		color: #ffffff;
+		border-radius: 0.2rem;
+	}
+
+	.Dropdown-option {
+		.is-selected {
+			margin-left: 10px;
+		}
+	}
+
+	.Dropdown-menu {
+		padding: 0.78571429em 2.1em 0.78571429em 1em;
+		margin-top: -10px !important;
+		max-height: -27px;
+		overflow-y: 0;
+		position: absolute;
+
+		/* top: 100%; */
+		width: 14rem;
+		min-width: 14rem;
+		min-height: 2.714286em;
+		z-index: 1000;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	&-menu {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+	}
+
+	.Loader {
+		position: absolute;
+		padding: 0 !important;
+		right:50%;
+		top:50%;
+		transform: translate(50%,50%);
+	}
+
+	&-cards {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+		font-size: 1rem;
+		border-radius: 0.28571429rem;
+		justify-content: space-evenly;
+
+		.land-card {
+			min-width: 224px;
+			max-width: 224px;
+			margin: auto;
+			margin-bottom: 1rem;
+		}
+	}
+
+	&-cards-collection {
+		position: relative;
+		margin-top: 50px;
+		min-height: 200px;
+		padding: 1px;
+		max-width: 1100px;
+		margin-left: auto !important;
+		margin-right: auto !important;
+		margin-bottom: 2rem !important;
+	}
+
+	&-button {
+		display: flex;
+		margin-top: 50px;
+		margin-bottom: 50px;
+		position: relative;
+		justify-content: center;
+	}
+
+	&-pagination {
+		display: inline-block;
+		margin-left: 0;
+		margin-right: 0;
+		text-align: center;
+		border-bottom: 2px solid rgba(34, 36, 38, 0.15);
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.marketplace-container-button {
+		width: 1127px;
+		margin-left: auto !important;
+		margin-right: auto !important;
+	}
+}
+
+.item {
+	color: #fff;
+	border-bottom-color: transparent;
+	border-bottom-style: solid;
+	border-radius: 0;
+	-ms-flex-item-align: end;
+	align-self: flex-end;
+	margin: 0 0 -2px;
+	font-size: 14px;
+	padding: 0.85714286em 0.75rem;
+	border-bottom-width: 2px;
+	-webkit-transition: color 0.1s ease;
+	-o-transition: color 0.1s ease;
+	transition: color 0.1s ease;
+}
+
+.menu-container {
+	display: flex;
+	max-width: 1200px;
+	width: 100%;
+	justify-content: space-between;
+	margin-left: auto !important;
+	margin-right: auto !important;
+
+	.react-tabs__tab--selected {
+		span {
+			width: 15px;
+			padding-left: 9px;
+			padding-right: 9px;
+			margin-left: 4px;
+			font-size: 13px;
+			color: #fff;
+			background: #ff0044;
+			border-radius: 1rem;
+		}
+	}
+
+	&-item {
+		display: flex;
+
+		span {
+			padding-left: 9px;
+			padding-right: 9px;
+			margin-left: 4px;
+			font-size: 13px;
+			color: #fff;
+			background: #272329;
+			border-radius: 1rem;
+		}
+	}
+}
+
+.menu-item {
+	color: $text !important;
+	font-weight: 700;
+	border-bottom-style: solid;
+	border-radius: 0;
+	border-bottom-color: transparent;
+	-ms-flex-item-align: end;
+	align-self: flex-end;
+	margin: 0 0 -2px;
+	padding: 0.85714286em 1.14285714em;
+	border-bottom-width: 2px;
+	-webkit-transition: color 0.1s ease;
+	-o-transition: color 0.1s ease;
+	transition: color 0.1s ease;
+	cursor: pointer;
+}
+
+.active {
+	border-color: $red;
+	color: $red !important;
+	cursor: pointer;
+	border-bottom-color: $red;
+	border-bottom-style: solid;
+	border-radius: 0;
+	font-size: 14px;
+	-ms-flex-item-align: end;
+	align-self: flex-end;
+	margin: 0 0 -2px;
+	padding: 0.85714286em 0.75rem;
+	border-bottom-width: 2px;
+	-webkit-transition: color 0.1s ease;
+	-o-transition: color 0.1s ease;
+	transition: color 0.1s ease;
+}
+
+.marketplace-tab {
+	display: flex;
+}
+
+.react-tabs__tab--selected {
+	border-color: $red;
+	color: $red !important;
+	cursor: pointer;
+	border-bottom-color: $red;
+	border-bottom-style: solid;
+	border-radius: 0;
+	-ms-flex-item-align: end;
+	align-self: flex-end;
+	margin: 0 0 -2px;
+	padding: 0.85714286em 1.14285714em;
+	border-bottom-width: 2px;
+	-webkit-transition: color 0.1s ease;
+	-o-transition: color 0.1s ease;
+	transition: color 0.5s ease;
+	outline: none;
+}
+
+.react-tabs__tab--disabled {
+	color: $text !important;
+	font-weight: 700;
+	border-bottom-style: solid;
+	border-radius: 0;
+	border-bottom-color: transparent;
+	-ms-flex-item-align: end;
+	align-self: flex-end;
+	margin: 0 0 -2px;
+	padding: 0.85714286em 1.14285714em;
+	border-bottom-width: 2px;
+	-webkit-transition: color 0.1s ease;
+	-o-transition: color 0.1s ease;
+	transition: color 0.5s ease;
+	outline: none;
+}
+
+.react-tabs__tab-panel {
+	display: none;
+	transition: all 0.5s ease;
+}
+
+.react-tabs__tab-panel--selected {
+	display: block;
+	transition: all 0.5s ease;
+}
+
+@media only screen and (max-width: 767px) {
+	.marketplace-container {
+		display: flex;
+		flex-wrap: initial;
+	}
+
+	/*.menu-container {
+		display: flex;
+		flex-direction: column !important;
+		width: 767px !important;
+		margin-left: 1em !important;
+		margin-right: 1em !important;
+		//display: block;
+		max-width: 100% !important;
+
+		&-item {
+			display: flex;
+			flex-direction: column;
+			align-content: flex-start;
+		}
+	}
+*/
+	.menu-item {
+		align-self: flex-start !important;
+	}
+
+	.Dropdown-control {
+		width: 100%;
+	}
+
+	.react-tabs__tab--selected {
+		border: none !important;
+	}
+
+	/*.marketplace-container-cards {
+		display: flex;
+		flex-direction: column;
+		width: fit-content;
+
+		&-collection {
+			width: fit-content;
+		}
+	}*/
+
+	.land-card.big {
+		min-width: 224px;
+		max-width: 224px;
+		margin-right: 0 !important;
+	}
+}

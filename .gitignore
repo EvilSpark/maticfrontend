@@ -1,0 +1,15 @@
+node_modules
+yarn-error.log
+yarn.lock
+.vscode
+.idea
+.DS_Store
+public/
+package-lock.json
+npm-debug.log
+*.swp
+*.swo
+ssl-cert
+dump.rdb
+dump
+dist

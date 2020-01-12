@@ -1,0 +1,305 @@
+@import '../common/styles/main';
+
+$topnav: TopNav-Responsive;
+$nav: TopNav;
+
+#nav-bar {
+	.Navigation {
+		display: flex;
+		position: relative;
+		-ms-flex-flow: row nowrap;
+		flex-flow: row nowrap;
+		-ms-flex-align: center;
+		align-items: center;
+		height: 94px;
+		-ms-flex-pack: center;
+		justify-content: space-between;
+		padding: 0 25px;
+		background-color: $nav-black;
+		font-weight: bold;
+		transition: all 0.5s;
+		z-index: 10;
+
+		.Navigation-menu {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		&-logo {
+			height: 56px;
+			width: 56px;
+			opacity: 1 !important;
+			background-color: transparent !important;
+			//align-items: left;
+			//margin:22px 10px;
+
+			&::selection {
+				background-color: #fff;
+				color: rgba(0, 0, 0, 0.87);
+			}
+		}
+
+		& a.enabled {
+			color: $text !important;
+			background-color: $red;
+			border-radius: 20px;
+			font-weight: 400;
+		}
+	}
+
+	a.Navigation-item {
+		align-self: center;
+		padding: 0.78571429em 0.92857143em;
+		margin: 0 0.35714286em;
+		-webkit-transition: color 0.1s ease;
+		-o-transition: color 0.1s ease;
+		transition: color 0.1s ease;
+		border-radius: 20px;
+		text-transform: uppercase;
+		font-family: $font-family;
+		font-size: 13px;
+		padding: 9px;
+		font-weight: 100;
+		color: $gray !important;
+		margin: 0 10px !important;
+		//align-items: center;
+
+		&:hover {
+			background-color: $red;
+			color: $text !important;
+			-webkit-transition: color 0.1s ease;
+			-o-transition: color 0.1s ease;
+			transition: color 0.1s ease;
+			border-radius: 20px;
+		}
+	}
+
+	//navbar signin state icons
+
+	.signedIn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 13px;
+		line-height: 16px;
+
+		span {
+			margin-right: 1.7rem;
+			width: 30px;
+			height: 30px;
+			text-align: center;
+			border-radius: 50%;
+
+			.signedIn-bell {
+				color: $gray;
+				cursor: pointer;
+				padding-top: 0.5rem;
+			}
+		}
+
+		span:hover {
+			background-color: #f04;
+			color: #fff !important;
+
+			// border:1px solid transparent;
+			.signedIn-bell {
+				color: #fff;
+				padding-top: 0.5rem;
+			}
+		}
+
+		&-icon {
+			padding-right: 0.7rem;
+		}
+
+		&-link {
+			padding-right: 0.5rem;
+		}
+
+		&-p {
+			color: $blue;
+			font-weight: bold;
+			padding-right: 1rem;
+		}
+
+		&-profile {
+			border-radius: 0.5rem;
+		}
+
+		& a {
+			color: $gray !important;
+		}
+
+		.signedIn-extra {
+			display: flex;
+			margin-right: 0.5rem;
+		}
+	}
+
+	//Navbar Responsive Part
+
+	.sidebar {
+		display: none;
+	}
+
+	.sidebar-content {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.FaBars {
+		display: none;
+	}
+
+	@media (max-width: 920px) {
+		.Navigation-logo {
+			display: none;
+		}
+	}
+
+	@media (max-width: 750px) {
+		.Navigation {
+			overflow: hidden;
+			position: relative;
+			transition: transform 1s !important;
+
+			.Navigation-menu {
+				a {
+					display: none;
+				}
+			}
+
+			&-div {
+				display: flex;
+				vertical-align: middle;
+
+				svg {
+					padding-top: 0.5rem;
+				}
+			}
+
+			a.enabled {
+				background-color: transparent;
+				display: flex;
+			}
+
+			.FaBars {
+				display: flex;
+			}
+		}
+
+		.Navigation.Responsive {
+			.FaBars {
+				position: absolute;
+			}
+
+			.Navigation-menu {
+				display: none;
+			}
+
+			.sidebar {
+				display: flex;
+				-ms-flex-direction: column;
+				flex-direction: column;
+				background: $gradient;
+				transform: translateZ(0);
+				transition: all 0.5s ease;
+				z-index: 2000 !important;
+				width: 350px;
+				justify-content: initial;
+				box-shadow: 0 0 1500px 30px #000 !important;
+				visibility: visible !important;
+
+				//position
+				right: auto;
+				left: 0;
+				position: fixed;
+				top: 0;
+				height: 100% !important;
+				max-height: 100%;
+				border-radius: 0 !important;
+				margin: 0 !important;
+				overflow-y: auto !important;
+				font-size: 1rem;
+				line-height: 1.5rem;
+
+				&-menu {
+					display: block;
+					background: 0 0;
+					border-top: none;
+					border-right: none;
+					flex-direction: column;
+					justify-content: space-evenly;
+					height: auto;
+					transition: none;
+					text-transform: uppercase;
+					font-family: var(--font-family);
+					font-size: 13px;
+					padding: 9px;
+					font-weight: 100;
+					color: $gray;
+					margin: 0 10px !important;
+				}
+
+				a {
+					color: $text;
+					border: 1px solid rgba(34, 36, 38, 0.15);
+					font-size: 1rem;
+				}
+
+				&-icon {
+					z-index: 30;
+					color: $gray !important;
+					margin: 10px 10px 30px 0 !important;
+					cursor: pointer;
+					transform: scale(2);
+					width: 190%;
+
+					&::hover {
+						color: $text;
+					}
+				}
+
+				&-item,
+				a {
+					color: $gray;
+					font-weight: 400;
+					//font-size: 1rem;
+					font-size: 2em !important;
+					text-transform: none !important;
+					background-color: transparent !important;
+					position: relative;
+					vertical-align: middle;
+					line-height: 1;
+					text-decoration: none;
+					-webkit-tap-highlight-color: transparent;
+					-ms-flex: 0 0 auto;
+					flex: 0 0 auto;
+					-webkit-user-select: none;
+					-moz-user-select: none;
+					-ms-user-select: none;
+					user-select: none;
+
+					&a::hover {
+						color: $text;
+					}
+				}
+
+				&-item.enabled {
+					color: $text;
+					font-weight: bolder;
+				}
+			}
+		}
+
+		.signedIn-extra {
+			display: none !important;
+		}
+
+		.Navigation-logo-link {
+			display: none;
+		}
+	}
+}
