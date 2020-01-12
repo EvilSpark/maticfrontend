@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './land-card.scss';
 import cardImg from '../assets/images/map3.png';
@@ -7,7 +7,6 @@ import icons from '../../../services/icon-service.js';
 import plazaGreen from '../assets/images/icon-plaza-green.svg';
 import districtBlue from '../assets/images/icon-district-blue.svg';
 import roadGray from '../assets/images/icon-road-gray.svg';
-import placeIcon from '../assets/images/place.svg';
 
 const MapMarker = icons['fa-map-marker'];
 

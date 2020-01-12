@@ -2,7 +2,6 @@ import React from 'react';
 import './marketplace.scss';
 import LandCard from '../common/landCard/landCard';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/initActions';
@@ -172,7 +171,4 @@ const mapDispatchToProps = (dispatch) => ({
   actions: bindActionCreators(actions, dispatch),
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Marketplace);
+export default connect(mapStateToProps, mapDispatchToProps)(Marketplace);
