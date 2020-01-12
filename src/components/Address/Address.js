@@ -12,9 +12,6 @@ class Address extends React.Component {
   };
 
   render() {
-    const { cards } = this.props;
-    // const defaultOption = options['Cheapest'];
-    const { cardsReversed } = this.props;
     return (
       <div>
         {/* <NavBar Address="true" /> */}
@@ -104,7 +101,4 @@ const mapDispatchToProps = (dispatch) => ({
   actions: bindActionCreators(actions, dispatch),
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Address);
+export default connect(mapStateToProps, mapDispatchToProps)(Address);

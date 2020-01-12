@@ -2,7 +2,6 @@ import React from 'react';
 import logo from '../common/assets/images/nav-logo.svg';
 import icons from '../../services/icon-service';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
 import * as actions from '../../actions/user-actions';
 import Popup from '../common/popup/Popup.js';
 import LoginPopup from '../common/popup/loginPopup.js';
@@ -54,20 +53,20 @@ class NavBar extends React.Component {
 
   closePopup = () => {
     this.setState({ ...this.state, closePopup: false });
-  closePopup = () => {
-    this.props.actions.hideLoginPopup();
-  };
+    closePopup = () => {
+      this.props.actions.hideLoginPopup();
+    };
 
-  navBarClickHandler = () => {
-    const newState = { ...this.state, topNav: !this.state.topNav };
-    console.log(newState);
-    this.setState(newState);
-  };
+    navBarClickHandler = () => {
+      const newState = { ...this.state, topNav: !this.state.topNav };
+      console.log(newState);
+      this.setState(newState);
+    };
 
-  showPopup = () => {
-    this.props.actions.showLoginPopup()
+    showPopup = () => {
+      this.props.actions.showLoginPopup();
+    };
   };
-
   render() {
     const {
       market,
@@ -76,7 +75,7 @@ class NavBar extends React.Component {
       isWallet,
       isActivity,
       showLoginPopup,
-      isSignIn
+      isSignIn,
     } = this.props;
 
     if (isLanding || isWallet) return <div></div>;
@@ -212,7 +211,6 @@ class NavBar extends React.Component {
     );
   }
 }
-
 NavBar.propTypes = {};
 
 const mapStateToProps = (state) => {
@@ -221,7 +219,7 @@ const mapStateToProps = (state) => {
   const isLanding = state.router.location.pathname === '/';
   const isWallet = state.router.location.pathname === '/wallet';
   const isActivity = state.router.location.pathname === '/activity';
-  const showLoginPopup = state.user.show_login_popup
+  const showLoginPopup = state.user.show_login_popup;
   const isSignIn = state.user.is_sign_in;
 
   return {
@@ -231,12 +229,11 @@ const mapStateToProps = (state) => {
     isWallet,
     isActivity,
     showLoginPopup,
-    isSignIn
+    isSignIn,
   };
 };
 const mapDispatchToProps = (dispatch) => ({
-  actions : bindActionCreators(actions, dispatch)
-})
-
+  actions: bindActionCreators(actions, dispatch),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

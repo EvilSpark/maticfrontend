@@ -6,15 +6,12 @@ import Popup from '../common/popup/Popup.js';
 import LoginPopup from '../common/popup/loginPopup.js';
 import img from '../common/assets/images/img.png';
 import Icons from '../../services/icon-service';
-import { Link } from 'react-router-dom';
+
 const Map = Icons['fa-map-marker'];
-import wallet1 from '../common/assets/images/wallet.svg';
-import walletConnect from '../common/assets/images/walcon.svg';
-import metamask from '../common/assets/images/metamask.svg';
-import portis from '../common/assets/images/portis.svg';
+
 import wallet from '../common/assets/images/square.png';
 import balance from '../common/assets/images/balance-icon.svg';
-import location from '../common/assets/images/location.svg';
+
 import road from '../common/assets/images/road.svg';
 
 class MaticCard extends React.Component {
@@ -28,9 +25,9 @@ class MaticCard extends React.Component {
     this.setState({ ...this.state, buy: !this.state.buy });
   };
 
-  outHandler= () => {
-    this.setState({...this.state, buy: false})
-  }
+  outHandler = () => {
+    this.setState({ ...this.state, buy: false });
+  };
 
   render() {
     return (

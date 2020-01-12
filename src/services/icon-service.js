@@ -41,7 +41,6 @@ module.exports = {
   'fa-chevron-right': require('react-icons/lib/fa/chevron-right'),
   'fa-js': require('react-icons/lib/io/social-javascript'),
   'fa-arrow-right': require('react-icons/lib/fa/arrow-right'),
-  'fa-arrow-left': require('react-icons/lib/fa/arrow-left'),
   'fa-carot-left': require('react-icons/lib/fa/caret-left'),
   'fa-caret-right': require('react-icons/lib/fa/caret-right'),
   'fa-caret-down': require('react-icons/lib/fa/caret-down'),
@@ -86,7 +85,6 @@ module.exports = {
   'fa-reddit': require('react-icons/lib/fa/reddit'),
   'md-start-circle': require('react-icons/lib/md/stars'),
   'fa-map-marker': require('react-icons/lib/fa/map-marker'),
-  'fa-bars': require('react-icons/lib/fa/bars'),
   'fa-bell': require('react-icons/lib/fa/bell'),
   'fa-angle-left': require('react-icons/lib/fa/angle-left'),
 };
